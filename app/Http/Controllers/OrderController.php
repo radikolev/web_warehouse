@@ -51,4 +51,20 @@ class OrderController extends Controller
         return redirect()->back()->with('success', 'Order successfully created. Total price: '. $order->total_price .'');
     }
 
+    public function ordersHistory()
+    {
+        $orders = Order::All();
+
+        return view('vendor.voyager.order_history')->with('orders', $orders);
+    }
+
+    public function orderInfoByID(Request $request)
+    {
+        $orders = OrderDetails::with('order', 'product')->where('order_id', $request->order_id)->get();
+
+        if($orders->isEmpty()) return redirect()->route('order-history')->with('error', 'Invalid order!');
+
+        return view('vendor.voyager.order_history_details')->with('orders', $orders);
+    }
+
 }

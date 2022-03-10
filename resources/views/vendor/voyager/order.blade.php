@@ -17,12 +17,11 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-bordered">
-                @csrf
                 <div class="panel-body">
                     <form method="POST" action="{{route('order-submit')}}">
                     @csrf
                     <div class="col-lg-12">
-                        <h2>Available products</h2>
+                        <h2>Products</h2>
                         <table class="table">
                             <thead>
                             <tr>
@@ -59,7 +58,7 @@
                     </div>
 
                     <div class="panel-footer">
-                        <button type="submit" name="submit_mailer" class="btn btn-primary save">Complete purchase</button>
+                        <button type="submit" name="submit_mailer" class="btn btn-primary save">Complete order</button>
                     </div>
                     </div>
                 </form>

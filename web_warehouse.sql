@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2022 at 11:39 AM
+-- Generation Time: Mar 10, 2022 at 01:01 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -85,15 +85,7 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (35, 6, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 1, 1, '{}', 8),
 (36, 6, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 9),
 (37, 6, 'warehouses_product_hasmany_warehouse_relationship', 'relationship', 'Warehouse', 1, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Warehouse\",\"table\":\"warehouses\",\"type\":\"belongsTo\",\"column\":\"warehouse_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"data_rows\",\"pivot\":\"0\",\"taggable\":\"0\"}', 3),
-(38, 6, 'warehouses_product_hasmany_product_relationship', 'relationship', 'Product', 1, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Product\",\"table\":\"products\",\"type\":\"belongsTo\",\"column\":\"product_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"data_rows\",\"pivot\":\"0\",\"taggable\":\"0\"}', 5),
-(39, 8, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 0),
-(40, 8, 'order_id', 'text', 'Order Id', 1, 1, 1, 1, 1, 1, '{}', 2),
-(41, 8, 'product_id', 'text', 'Product Id', 1, 1, 1, 1, 1, 1, '{}', 3),
-(42, 8, 'quantity', 'text', 'Quantity', 1, 1, 1, 1, 1, 1, '{}', 5),
-(43, 8, 'price', 'text', 'Price', 1, 1, 1, 1, 1, 1, '{}', 6),
-(44, 8, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 7),
-(45, 8, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 8),
-(46, 8, 'orders_detail_belongsto_product_relationship', 'relationship', 'Product', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Product\",\"table\":\"products\",\"type\":\"belongsTo\",\"column\":\"product_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"data_rows\",\"pivot\":\"0\",\"taggable\":\"0\"}', 4);
+(38, 6, 'warehouses_product_hasmany_product_relationship', 'relationship', 'Product', 1, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Product\",\"table\":\"products\",\"type\":\"belongsTo\",\"column\":\"product_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"data_rows\",\"pivot\":\"0\",\"taggable\":\"0\"}', 5);
 
 -- --------------------------------------------------------
 
@@ -129,8 +121,7 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (3, 'roles', 'roles', 'Role', 'Roles', 'voyager-lock', 'TCG\\Voyager\\Models\\Role', NULL, 'TCG\\Voyager\\Http\\Controllers\\VoyagerRoleController', '', 1, 0, NULL, '2022-03-09 19:15:02', '2022-03-09 19:15:02'),
 (4, 'warehouses', 'warehouses', 'Warehouse', 'Warehouses', NULL, 'App\\Models\\Warehouse', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2022-03-10 05:36:55', '2022-03-10 05:36:55'),
 (5, 'products', 'products', 'Product', 'Products', NULL, 'App\\Models\\Product', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2022-03-10 05:37:06', '2022-03-10 05:37:06'),
-(6, 'warehouses_products', 'warehouses-products', 'Warehouses Product', 'Warehouses Products', NULL, 'App\\Models\\WarehouseProduct', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2022-03-10 05:38:09', '2022-03-10 05:49:16'),
-(8, 'orders_details', 'orders-details', 'Orders Detail', 'Orders Details', NULL, 'App\\Models\\OrderDetails', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2022-03-10 08:03:03', '2022-03-10 08:06:29');
+(6, 'warehouses_products', 'products-availability', 'Products Availability', 'Products Availability', NULL, 'App\\Models\\WarehouseProduct', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2022-03-10 05:38:09', '2022-03-10 09:53:22');
 
 -- --------------------------------------------------------
 
@@ -208,9 +199,9 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (11, 1, 'Web Warehouse', '', '_self', 'voyager-company', '#000000', NULL, 2, '2022-03-09 19:19:51', '2022-03-09 19:19:59', NULL, ''),
 (12, 1, 'Warehouses', '', '_self', NULL, NULL, NULL, 8, '2022-03-10 05:36:55', '2022-03-10 05:36:55', 'voyager.warehouses.index', NULL),
 (13, 1, 'Products', '', '_self', NULL, NULL, NULL, 9, '2022-03-10 05:37:06', '2022-03-10 05:37:06', 'voyager.products.index', NULL),
-(14, 1, 'Warehouses Products', '', '_self', NULL, NULL, NULL, 10, '2022-03-10 05:38:09', '2022-03-10 05:38:09', 'voyager.warehouses-products.index', NULL),
-(15, 1, 'Order', 'admin/order', '_self', NULL, '#000000', NULL, 11, '2022-03-10 05:53:57', '2022-03-10 05:53:57', NULL, ''),
-(16, 1, 'Orders Details', '', '_self', NULL, NULL, NULL, 12, '2022-03-10 08:03:03', '2022-03-10 08:03:03', 'voyager.orders-details.index', NULL);
+(14, 1, 'Products Availability', '', '_self', NULL, '#000000', NULL, 10, '2022-03-10 05:38:09', '2022-03-10 09:52:54', 'voyager.products-availability.index', 'null'),
+(15, 1, 'Create New Order', 'admin/order', '_self', NULL, '#000000', NULL, 11, '2022-03-10 05:53:57', '2022-03-10 09:51:31', NULL, ''),
+(17, 1, 'Order History', 'admin/orders', '_self', NULL, '#000000', NULL, 12, '2022-03-10 09:29:09', '2022-03-10 09:29:09', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -272,6 +263,14 @@ CREATE TABLE `orders` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `total_price`, `created_at`, `updated_at`) VALUES
+(1, '534', '2022-03-10 08:49:23', '2022-03-10 08:49:23'),
+(2, '890', '2022-03-10 09:23:51', '2022-03-10 09:23:51');
+
 -- --------------------------------------------------------
 
 --
@@ -287,6 +286,17 @@ CREATE TABLE `orders_details` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `orders_details`
+--
+
+INSERT INTO `orders_details` (`id`, `order_id`, `product_id`, `quantity`, `price`, `created_at`, `updated_at`) VALUES
+(1, 1, 4, 2, 42, '2022-03-10 08:49:23', '2022-03-10 08:49:23'),
+(2, 1, 5, 3, 150, '2022-03-10 08:49:23', '2022-03-10 08:49:23'),
+(3, 2, 3, 1, 56, '2022-03-10 09:23:51', '2022-03-10 09:23:51'),
+(4, 2, 4, 2, 42, '2022-03-10 09:23:51', '2022-03-10 09:23:51'),
+(5, 2, 5, 5, 150, '2022-03-10 09:23:51', '2022-03-10 09:23:51');
 
 -- --------------------------------------------------------
 
@@ -358,12 +368,7 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (37, 'read_warehouses_products', 'warehouses_products', '2022-03-10 05:38:09', '2022-03-10 05:38:09'),
 (38, 'edit_warehouses_products', 'warehouses_products', '2022-03-10 05:38:09', '2022-03-10 05:38:09'),
 (39, 'add_warehouses_products', 'warehouses_products', '2022-03-10 05:38:09', '2022-03-10 05:38:09'),
-(40, 'delete_warehouses_products', 'warehouses_products', '2022-03-10 05:38:09', '2022-03-10 05:38:09'),
-(41, 'browse_orders_details', 'orders_details', '2022-03-10 08:03:03', '2022-03-10 08:03:03'),
-(42, 'read_orders_details', 'orders_details', '2022-03-10 08:03:03', '2022-03-10 08:03:03'),
-(43, 'edit_orders_details', 'orders_details', '2022-03-10 08:03:03', '2022-03-10 08:03:03'),
-(44, 'add_orders_details', 'orders_details', '2022-03-10 08:03:03', '2022-03-10 08:03:03'),
-(45, 'delete_orders_details', 'orders_details', '2022-03-10 08:03:03', '2022-03-10 08:03:03');
+(40, 'delete_warehouses_products', 'warehouses_products', '2022-03-10 05:38:09', '2022-03-10 05:38:09');
 
 -- --------------------------------------------------------
 
@@ -396,12 +401,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (37, 1),
 (38, 1),
 (39, 1),
-(40, 1),
-(41, 1),
-(42, 1),
-(43, 1),
-(44, 1),
-(45, 1);
+(40, 1);
 
 -- --------------------------------------------------------
 
@@ -543,7 +543,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Administrator', 'admin@localhost', 'users/default.png', NULL, '$2y$10$NDnZkOCaojZ/0FnoTYdxT.exLrv3lfjFj7bxkIUNNcRL6NXbmg/UC', '5xawSglWxMDWewPaSJcFUvIQigge6zgrivKDFxWvyMljoGZ5Nmk8eDS5DI1T', NULL, '2022-03-09 19:16:57', '2022-03-09 19:16:57');
+(1, 1, 'Administrator', 'admin@localhost', 'users/default.png', NULL, '$2y$10$NDnZkOCaojZ/0FnoTYdxT.exLrv3lfjFj7bxkIUNNcRL6NXbmg/UC', 'Rtvj3DxnIlFOEEM6A7V481sZENzKGyuKUWSIyDa9xYY9tjzqBlq6Tf25diEZ', NULL, '2022-03-09 19:16:57', '2022-03-09 19:16:57');
 
 -- --------------------------------------------------------
 
@@ -599,10 +599,11 @@ CREATE TABLE `warehouses_products` (
 --
 
 INSERT INTO `warehouses_products` (`id`, `warehouse_id`, `product_id`, `quantity`, `price`, `created_at`, `updated_at`) VALUES
-(3, 2, 2, 1, 56, '2022-03-10 07:50:00', '2022-03-10 07:59:28'),
-(4, 1, 5, 5, 42, '2022-03-10 10:14:00', '2022-03-10 08:14:53'),
-(5, 3, 3, 45, 150, '2022-03-10 10:15:00', '2022-03-10 08:15:02'),
-(6, 2, 6, 5, 65, '2022-03-10 10:15:00', '2022-03-10 08:15:10');
+(3, 2, 2, 0, 56, '2022-03-10 07:50:00', '2022-03-10 09:23:51'),
+(4, 1, 5, 1, 42, '2022-03-10 10:14:00', '2022-03-10 09:23:51'),
+(5, 3, 3, 37, 150, '2022-03-10 10:15:00', '2022-03-10 09:23:51'),
+(6, 2, 6, 5, 65, '2022-03-10 10:15:00', '2022-03-10 08:15:10'),
+(7, 3, 3, 51, 213, '2022-03-10 11:54:00', '2022-03-10 09:54:23');
 
 --
 -- Indexes for dumped tables
@@ -782,7 +783,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT for table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -794,13 +795,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `orders_details`
 --
 ALTER TABLE `orders_details`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -854,7 +855,7 @@ ALTER TABLE `warehouses`
 -- AUTO_INCREMENT for table `warehouses_products`
 --
 ALTER TABLE `warehouses_products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables

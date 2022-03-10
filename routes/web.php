@@ -28,4 +28,6 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::get('/order', [OrderController::class, 'create'])->name('order');
     Route::post('/order', [OrderController::class, 'store'])->name('order-submit');
+    Route::get('/orders', [OrderController::class, 'ordersHistory'])->name('order-history');
+    Route::get('/orders/{order_id}', [OrderController::class, 'orderInfoByID'])->name('order-info-byID');
 });
